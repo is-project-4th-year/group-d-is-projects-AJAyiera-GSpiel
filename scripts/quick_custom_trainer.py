@@ -223,7 +223,7 @@ class QuickCustomTrainer:
         print(f"   Training samples: {len(X_train_split)}")
         print(f"   Test samples: {len(X_test_split)}")
         
-        # Simple model that works
+        
         model = models.Sequential([
             layers.Input(shape=(64, 64, 1)),
             layers.Conv2D(32, (3, 3), activation='relu'),
