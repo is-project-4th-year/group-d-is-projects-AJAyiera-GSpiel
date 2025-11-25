@@ -1,4 +1,4 @@
-# scripts/quick_custom_train.py
+# RUN THIS TO TRAIN YOUR MODEL. 50 IMAGES PER GESTURE. CAPTURE IN DIFFERENT POSITIONS IF POSSIBLE
 import cv2
 import mediapipe as mp
 import numpy as np
@@ -32,7 +32,7 @@ class QuickCustomTrainer:
         
         self.collected_data = {i: [] for i in range(10)}
         
-    def collect_training_data(self, samples_per_gesture=50):
+    def collect_training_data(self, samples_per_gesture=50): #CHANGE VALUE IF YOU WOULD WANT MORE OR LESS SAMPLES AS WELL AS AT THE BOTTOM OF THE FILE.
         """Quick data collection with YOUR camera and hands"""
         cap = cv2.VideoCapture(0)
         
@@ -137,20 +137,18 @@ class QuickCustomTrainer:
         recall = recall_score(y_test, y_pred, average='weighted', zero_division=0)
         f1 = f1_score(y_test, y_pred, average='weighted', zero_division=0)
         
-        # Print overall metrics
+        # The overall metrics
         print(f"🎯 Overall Metrics:")
         print(f"   Accuracy:  {accuracy:.4f}")
         print(f"   Precision: {precision:.4f}")
         print(f"   Recall:    {recall:.4f}")
         print(f"   F1-Score:  {f1:.4f}")
         
-        # Detailed classification report
         print(f"\n📈 Detailed Classification Report:")
         print(classification_report(y_test, y_pred, 
                                   target_names=[self.gestures[i] for i in range(10)],
                                   zero_division=0))
         
-        # Per-class metrics
         print(f"🎭 Per-Class Metrics:")
         class_precision = precision_score(y_test, y_pred, average=None, zero_division=0)
         class_recall = recall_score(y_test, y_pred, average=None, zero_division=0)
@@ -304,4 +302,4 @@ class QuickCustomTrainer:
 
 if __name__ == "__main__":
     trainer = QuickCustomTrainer()
-    trainer.collect_training_data(samples_per_gesture=50)
+    trainer.collect_training_data(samples_per_gesture=50) #CHANGE VALUE LIKE ABOVE
