@@ -2,21 +2,22 @@
 
 A computer vision program that utilizes machine learning to use user-generated hand gestures converting them to virtual keystrokes through their webcam. It is a self-contained program that runs locally on your device meaning there are no network latency issues.
 
-##Features
+## Features
 
 - Real time gesture capturing
 - Dual-Handed controls
 - Personalized model creation (unique model for each user)
 - User interface for gesture sampling and gesture capturing for gameplay
 
-##Setup
+## Setup
 
-###Prerequisites (Hardware and Software)
+### Prerequisites (Hardware and Software)
 
--Python version 3.9 (specifically)
--Functioning webcam
+- Python version 3.9 (specifically)
+- Functioning webcam
+- 8GB RAM (Minimum)
 
-###Installation
+### Installation
 
 1. Clone the repository
 
@@ -27,9 +28,9 @@ pip install -r requirements.txt
 pip install pydirectinput
 ```
 
-##Usage
+## Usage
 
-###Camera Testing
+### Camera Testing
 
 Run:
 ```bash
@@ -50,20 +51,21 @@ python test_custom_model.py
 
 This will open a window where you can test whether different gestures can be recognized through your webcam.
 
-###Running the Program
+### Running the Program
 
 After the above steps, if everything is in order, run:
 ```bash
 python gspiel_dual_hand_controller.py
 ```
 
-##Limitations
+## Limitations
 
 This project was tested with simpler games. Specifically Sonic the Hedgehog 2(1992) and an emulated version of the original Super Mario Bros.(1985)
 It is not compatible with more complex games as the control scheme cannot handle that many actions to perform.
 Kindly test with a relatively simple game.
+Performance of camera capture is limited by user hardware.
 
-##Project Structure
+## Project Structure
 
 ```
 GSPIEL/
@@ -75,11 +77,11 @@ GSPIEL/
 └── models              # Houses the .h5 and .pkl files for the controller and test files to locate.
 ```
 
-##License
+## License
 
 MIT License
 
-##Contributors
+## Contributors
 
 - GSPIEL Development Team
 
