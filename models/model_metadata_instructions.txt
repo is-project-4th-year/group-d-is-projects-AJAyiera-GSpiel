@@ -1,0 +1,2 @@
+After training the custom model (running quick_custom_trainer), move the model (.h5) and metadata(.pkl) files to this folder.
+This is where gspiel_dual_hand_controller.py and test_custom_model.py will find the files.
